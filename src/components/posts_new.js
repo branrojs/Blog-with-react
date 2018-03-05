@@ -27,7 +27,11 @@ class PostsNew extends Component {
 	}
 
 	onSubmit(values){
-		this.props.createPost(values);
+		this.props.createPost(values, () => {
+			this.props.history.push('/');
+		});
+		 //this string needs to match one of the different routes that 
+									  // defined inside of our app
 	}
 
 	render() {
